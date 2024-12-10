@@ -41,7 +41,7 @@ class Api
 				throw new Error(`Ключ ${key} не найден`);
 			}
 		});
-        return result;
+		return result;
 	}
 }
 
