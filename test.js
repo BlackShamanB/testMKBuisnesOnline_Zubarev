@@ -40,7 +40,7 @@ class Api
 			} else {
 				throw new Error(`Ключ ${key} не найден`);
 			}
-        });
+		});
         return result;
 	}
 }
