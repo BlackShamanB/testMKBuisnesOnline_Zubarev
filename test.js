@@ -34,12 +34,12 @@ class Api
 	{
 		/* Здесь ваш код */
 
-        let result = template.replace(/%(.*?)%/g, (match, key) => {
-            if (object.hasOwnProperty(key)) {
-                return object[key];
-            } else {
-                throw new Error(`Ключ ${key} не найден`);
-            }
+		let result = template.replace(/%(.*?)%/g, (match, key) => {
+			if (object.hasOwnProperty(key)) {
+				return object[key];
+			} else {
+				throw new Error(`Ключ ${key} не найден`);
+			}
         });
         return result;
 	}
