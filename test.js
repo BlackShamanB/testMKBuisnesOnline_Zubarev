@@ -32,14 +32,16 @@ class Api
 	 */
 	get_api_path(object, template)
 	{
-		let result = template;
 		/* Здесь ваш код */
 
-        for(let key in object) {
-            result = result.replace(`%${key}%`, object[key])
-        }
-
-		return result;
+        let result = template.replace(/%(.*?)%/g, (match, key) => {
+            if (object.hasOwnProperty(key)) {
+                return object[key];
+            } else {
+                throw new Error(`Ключ ${key} не найден`);
+            }
+        });
+        return result;
 	}
 }
 
